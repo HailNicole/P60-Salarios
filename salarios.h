@@ -9,6 +9,7 @@
 #include "obrero.h"
 #include "controlador.h"
 #include "acerca.h"
+#include "dialog.h"
 
 #define VERSION "0.2"
 
@@ -36,6 +37,8 @@ private slots:
     void on_actionGuardar_triggered();
 
     void on_actionAcerca_de_triggered();
+
+    void on_actionAbrir_triggered();
 
 private:
     Ui::Salarios *ui;

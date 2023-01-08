@@ -19,6 +19,14 @@
   <property name="windowTitle">
    <string>Salarios</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="recursos.qrc">
+    <normaloff>:/recursos/salario.png</normaloff>:/recursos/salario.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(60, 171, 25);
+background-color: rgb(121, 219, 90);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
@@ -41,6 +49,9 @@
          <layout class="QFormLayout" name="formLayout">
           <item row="0" column="0">
            <widget class="QLabel" name="label">
+            <property name="styleSheet">
+             <string notr="true">color: rgb(0, 0, 0);</string>
+            </property>
             <property name="text">
              <string>Nombre:</string>
             </property>
@@ -55,6 +66,9 @@
           </item>
           <item row="1" column="0">
            <widget class="QLabel" name="label_2">
+            <property name="styleSheet">
+             <string notr="true">color: rgb(0, 0, 0);</string>
+            </property>
             <property name="text">
              <string>Horas:</string>
             </property>
@@ -68,6 +82,9 @@
        </item>
        <item>
         <widget class="QGroupBox" name="groupBox">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(236, 171, 216);</string>
+         </property>
          <property name="title">
           <string>Jornada</string>
          </property>
@@ -152,6 +169,9 @@
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
         <widget class="QPlainTextEdit" name="outCalculos">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 249, 105);</string>
+         </property>
          <property name="readOnly">
           <bool>true</bool>
          </property>
@@ -173,6 +193,9 @@
      <width>600</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
    </property>
    <widget class="QMenu" name="menuArchivo">
     <property name="title">
@@ -197,6 +220,10 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionNuevo">
+   <property name="icon">
+    <iconset resource="recursos.qrc">
+     <normaloff>:/recursos/agregar-archivo.png</normaloff>:/recursos/agregar-archivo.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Nuevo</string>
    </property>
@@ -205,6 +232,10 @@
    </property>
   </action>
   <action name="actionAbrir">
+   <property name="icon">
+    <iconset resource="recursos.qrc">
+     <normaloff>:/recursos/abrir-documento.png</normaloff>:/recursos/abrir-documento.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Abrir</string>
    </property>
@@ -213,6 +244,10 @@
    </property>
   </action>
   <action name="actionGuardar">
+   <property name="icon">
+    <iconset resource="recursos.qrc">
+     <normaloff>:/recursos/guardar-el-archivo.png</normaloff>:/recursos/guardar-el-archivo.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Guardar</string>
    </property>
@@ -221,6 +256,10 @@
    </property>
   </action>
   <action name="actionCalcular">
+   <property name="icon">
+    <iconset resource="recursos.qrc">
+     <normaloff>:/recursos/presupuesto.png</normaloff>:/recursos/presupuesto.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Calcular</string>
    </property>
@@ -229,6 +268,10 @@
    </property>
   </action>
   <action name="actionSalir">
+   <property name="icon">
+    <iconset resource="recursos.qrc">
+     <normaloff>:/recursos/cerrar-sesion.png</normaloff>:/recursos/cerrar-sesion.png</iconset>
+   </property>
    <property name="text">
     <string>&amp;Salir</string>
    </property>
@@ -237,11 +280,17 @@
    </property>
   </action>
   <action name="actionAcerca_de">
+   <property name="icon">
+    <iconset resource="recursos.qrc">
+     <normaloff>:/recursos/acerca-de.png</normaloff>:/recursos/acerca-de.png</iconset>
+   </property>
    <property name="text">
     <string>Acerca de Salarios</string>
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="recursos.qrc"/>
+ </resources>
  <connections/>
 </ui>

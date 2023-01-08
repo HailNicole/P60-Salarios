@@ -24,12 +24,41 @@ void Salarios::on_btnCalcular_clicked()
 
 void Salarios::on_actionNuevo_triggered()
 {
-    // Limpiar widgets
-    limpiar();
-    // Limpiar el texto de los calculos
-    ui->outCalculos->clear();
-    // Mostrar mensaje en la barra de estado
-    ui->statusbar->showMessage("Nuevos cálculos de salario.", 3000);
+    QString datos = ui->outCalculos->toPlainText();
+
+    if(datos.isEmpty()){
+        // Limpiar widgets´
+        limpiar();
+        // Limpiar el texto de los calculos
+        ui->outCalculos->clear();
+        // Mostrar mensaje en la barra de estado
+        ui->statusbar->showMessage("Nuevos cálculos de salario.", 3000);
+    }else{
+        // Crear un objeto del cuadro de diálogo
+        Dialog *dialog = new Dialog(this);
+        // Mostrar la venta en modo MODAL
+        //dialog->exec();
+        if(dialog->exec() == QDialog::Accepted){
+            on_actionGuardar_triggered();
+            limpiar();
+            ui->outCalculos->clear();
+            ui->statusbar->showMessage("Nuevos cálculos de salario.", 3000);
+        }
+        else{
+            QMessageBox::warning(this,
+                                 "Guardar archivo",
+                                 "No se ha guardado el archivo.");
+
+            // Limpiar widgets´
+            limpiar();
+            // Limpiar el texto de los calculos
+            ui->outCalculos->clear();
+            // Mostrar mensaje en la barra de estado
+            ui->statusbar->showMessage("Nuevos cálculos de salario.", 3000);
+        }
+
+    }
+
 }
 
 void Salarios::limpiar()
@@ -94,6 +123,11 @@ void Salarios::on_actionSalir_triggered()
 
 void Salarios::on_actionGuardar_triggered()
 {
+    QString datos = ui->outCalculos->toPlainText();
+    if(datos.isEmpty()){
+        QMessageBox::information(this, "Advertencia" , "No se han ingresado datos para guardar :|");
+        return;
+    }
     // Abrir un cuadro de diálogo para seleccionar el path y archivo a guardar
     QString nombreArchivo = QFileDialog::getSaveFileName(this,
                                                    "Guardar calculos de salarios",
@@ -108,6 +142,7 @@ void Salarios::on_actionGuardar_triggered()
         // Enviar los datos del resultado a la salida
         salida << ui->outCalculos->toPlainText();
         // Mostrar mensaje en la barra de estados
+        QMessageBox::information(this, " ", "Datos guardados con éxito!");
         ui->statusbar->showMessage("Datos guardados en: " + nombreArchivo, 5000);
         // Cerrar el archivo
         archivo.close();
@@ -132,6 +167,22 @@ void Salarios::on_actionAcerca_de_triggered()
     dialog->exec();
     // Luego de cerrar la ventana, se acceden a los datos de la misma
     qDebug() << dialog->valor();
+}
 
+void Salarios::on_actionAbrir_triggered()
+{
+    QString texto="";
+    QFile file(QFileDialog::getOpenFileName(this,"Abrir Archivo","","Archivo de Texto(*.txt)"));
+
+           if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
+              QMessageBox::warning(this, "Salarios", "No se puede abrir el archivo");
+           }else{
+               QTextStream entrada(&file);
+               while (!entrada.atEnd()) {
+                   texto += entrada.readLine()+'\n';
+               }
+            ui->outCalculos->appendPlainText(texto);
+               file.close();
+           }
 }
 

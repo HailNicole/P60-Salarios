@@ -1,2 +1,12 @@
-<!DOCTYPE RCC>
-<RCC version="1.0"/>
+<RCC>
+    <qresource prefix="/">
+        <file>recursos/abrir-documento.png</file>
+        <file>recursos/acerca-de.png</file>
+        <file>recursos/agregar-archivo.png</file>
+        <file>recursos/cerrar-sesion.png</file>
+        <file>recursos/guardar-el-archivo.png</file>
+        <file>recursos/presupuesto.png</file>
+        <file>recursos/salario.png</file>
+        <file>recursos/green-gradient-abstract-background-empty-room-with-space-for-your-text-and-picture.jpg</file>
+    </qresource>
+</RCC>

@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     acerca.cpp \
     controlador.cpp \
+    dialog.cpp \
     main.cpp \
     obrero.cpp \
     salarios.cpp
@@ -18,11 +19,13 @@ SOURCES += \
 HEADERS += \
     acerca.h \
     controlador.h \
+    dialog.h \
     obrero.h \
     salarios.h
 
 FORMS += \
     acerca.ui \
+    dialog.ui \
     salarios.ui
 
 # Default rules for deployment.
