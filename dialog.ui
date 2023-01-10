@@ -26,7 +26,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 255, 255);
-border-image: url(:/recursos/green-gradient-abstract-background-empty-room-with-space-for-your-text-and-picture.jpg);</string>
+</string>
   </property>
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
