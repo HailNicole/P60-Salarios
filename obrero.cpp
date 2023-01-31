@@ -78,12 +78,12 @@ void Obrero::setDescuento(double newDescuento)
 QString Obrero::toString()
 {
     QString str = "";
-    str.append("Nombre: " + m_nombre + "\n");
-    str.append("Jornada: " + jornada2String() + "\n");
-    str.append("Horas: " + QString::number(m_horas) + "\n");
-    str.append("Salario Bruto: $" + QString::number(m_salarioBruto) + "\n");
-    str.append("Descuento: $" + QString::number(m_descuento) + "\n");
-    str.append("Salario Neto: $" + QString::number(m_salarioNeto) + "\n");
+    str.append(tr("Nombre: ") + m_nombre + "\n");
+    str.append(tr("Jornada: ") + jornada2String() + "\n");
+    str.append(tr("Horas: ") + QString::number(m_horas) + "\n");
+    str.append(tr("Salario Bruto: $") + QString::number(m_salarioBruto) + "\n");
+    str.append(tr("Descuento: $") + QString::number(m_descuento) + "\n");
+    str.append(tr("Salario Neto: $") + QString::number(m_salarioNeto) + "\n");
     return str;
 }
 
@@ -91,13 +91,13 @@ QString Obrero::jornada2String()
 {
     switch (m_jornada) {
     case TipoJornada::Matituna:
-        return "Matutina";
+        return tr("Matutina");
         break;
     case TipoJornada::Vespertina:
-        return "Vespertina";
+        return tr("Vespertina");
         break;
     case TipoJornada::Nocturna:
-        return "Nocturna";
+        return tr("Nocturna");
         break;
     default:
         return "";

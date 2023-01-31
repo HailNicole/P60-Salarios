@@ -38,6 +38,54 @@
     </message>
 </context>
 <context>
+    <name>Obrero</name>
+    <message>
+        <location filename="obrero.cpp" line="81"/>
+        <source>Nombre: </source>
+        <translation>Nome: </translation>
+    </message>
+    <message>
+        <location filename="obrero.cpp" line="82"/>
+        <source>Jornada: </source>
+        <translation>Jornada: </translation>
+    </message>
+    <message>
+        <location filename="obrero.cpp" line="83"/>
+        <source>Horas: </source>
+        <translation>Horas: </translation>
+    </message>
+    <message>
+        <location filename="obrero.cpp" line="84"/>
+        <source>Salario Bruto: $</source>
+        <translation>Salário bruto: $</translation>
+    </message>
+    <message>
+        <location filename="obrero.cpp" line="85"/>
+        <source>Descuento: $</source>
+        <translation>Desconto: $</translation>
+    </message>
+    <message>
+        <location filename="obrero.cpp" line="86"/>
+        <source>Salario Neto: $</source>
+        <translation>Salário líquido: $</translation>
+    </message>
+    <message>
+        <location filename="obrero.cpp" line="94"/>
+        <source>Matutina</source>
+        <translation>Manhã</translation>
+    </message>
+    <message>
+        <location filename="obrero.cpp" line="97"/>
+        <source>Vespertina</source>
+        <translation>Noite</translation>
+    </message>
+    <message>
+        <location filename="obrero.cpp" line="100"/>
+        <source>Nocturna</source>
+        <translation>Nocturna</translation>
+    </message>
+</context>
+<context>
     <name>Salarios</name>
     <message>
         <location filename="salarios.ui" line="20"/>
