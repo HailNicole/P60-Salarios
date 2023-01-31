@@ -8,5 +8,7 @@
         <file>recursos/presupuesto.png</file>
         <file>recursos/salario.png</file>
         <file>recursos/green-gradient-abstract-background-empty-room-with-space-for-your-text-and-picture.jpg</file>
+        <file>Salarios_portuguese_Brazil.qm</file>
+        <file>Salarios_fr_FR.qm</file>
     </qresource>
 </RCC>

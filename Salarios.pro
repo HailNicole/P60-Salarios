@@ -28,6 +28,10 @@ FORMS += \
     dialog.ui \
     salarios.ui
 
+TRANSLATIONS += \
+    Salarios_fr_FR.ts \
+    Salarios_portuguese_Brazil.ts
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin

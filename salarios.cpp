@@ -32,7 +32,7 @@ void Salarios::on_actionNuevo_triggered()
         // Limpiar el texto de los calculos
         ui->outCalculos->clear();
         // Mostrar mensaje en la barra de estado
-        ui->statusbar->showMessage("Nuevos cálculos de salario.", 3000);
+        ui->statusbar->showMessage(tr("Nuevos cálculos de salario."), 3000);
     }else{
         // Crear un objeto del cuadro de diálogo
         Dialog *dialog = new Dialog(this);
@@ -42,19 +42,19 @@ void Salarios::on_actionNuevo_triggered()
             on_actionGuardar_triggered();
             limpiar();
             ui->outCalculos->clear();
-            ui->statusbar->showMessage("Nuevos cálculos de salario.", 3000);
+            ui->statusbar->showMessage(tr("Nuevos cálculos de salario."), 3000);
         }
         else{
             QMessageBox::warning(this,
-                                 "Guardar archivo",
-                                 "No se ha guardado el archivo.");
+                                 tr("Guardar archivo"),
+                                 tr("No se ha guardado el archivo."));
 
             // Limpiar widgets´
             limpiar();
             // Limpiar el texto de los calculos
             ui->outCalculos->clear();
             // Mostrar mensaje en la barra de estado
-            ui->statusbar->showMessage("Nuevos cálculos de salario.", 3000);
+            ui->statusbar->showMessage(tr("Nuevos cálculos de salario."), 3000);
         }
 
     }
@@ -85,7 +85,7 @@ void Salarios::calcular()
     }
     // Validacion de datos
     if(nombre == "" || horas == 0){
-        QMessageBox::warning(this,"Advertencia","El nombre y/o el número de horas es incorrecto");
+        QMessageBox::warning(this,tr("Advertencia"),tr("El nombre y/o el número de horas es incorrecto"));
         return;
     }
 
@@ -98,13 +98,13 @@ void Salarios::calcular()
     } else {
         QMessageBox::critical(
                     this,
-                    "Error",
-                    "No se puede calcular el salario.");
+                    tr("Error"),
+                    tr("No se puede calcular el salario."));
     }
     // Limpiar widgets
     limpiar();
     // Mostrar mensaje en la barra de estado
-    ui->statusbar->showMessage("Salario de " + nombre + " calculado.",5000);
+    ui->statusbar->showMessage(tr("Salario de ") + nombre + tr(" calculado."),5000);
 
 }
 
@@ -125,14 +125,14 @@ void Salarios::on_actionGuardar_triggered()
 {
     QString datos = ui->outCalculos->toPlainText();
     if(datos.isEmpty()){
-        QMessageBox::information(this, "Advertencia" , "No se han ingresado datos para guardar :|");
+        QMessageBox::information(this, tr("Advertencia") , tr("No se han ingresado datos para guardar :|"));
         return;
     }
     // Abrir un cuadro de diálogo para seleccionar el path y archivo a guardar
     QString nombreArchivo = QFileDialog::getSaveFileName(this,
-                                                   "Guardar calculos de salarios",
+                                                   tr("Guardar calculos de salarios"),
                                                    QDir::home().absolutePath() + "/salarios.txt",
-                                                   "Archivos de texto (*.txt)");
+                                                   tr("Archivos de texto (*.txt)"));
     // Crear un objeto File
     QFile archivo(nombreArchivo);
     // Tartar de abrir para escritura
@@ -142,15 +142,15 @@ void Salarios::on_actionGuardar_triggered()
         // Enviar los datos del resultado a la salida
         salida << ui->outCalculos->toPlainText();
         // Mostrar mensaje en la barra de estados
-        QMessageBox::information(this, " ", "Datos guardados con éxito!");
-        ui->statusbar->showMessage("Datos guardados en: " + nombreArchivo, 5000);
+        QMessageBox::information(this, " ", tr("Datos guardados con éxito!"));
+        ui->statusbar->showMessage(tr("Datos guardados en: ") + nombreArchivo, 5000);
         // Cerrar el archivo
         archivo.close();
     }else {
         // Mensaje de error
         QMessageBox::warning(this,
-                             "Guardar archivo",
-                             "No se puede acceder al archivo para guardar los datos.");
+                             tr("Guardar archivo"),
+                             tr("No se puede acceder al archivo para guardar los datos."));
     }
 
 
@@ -169,13 +169,14 @@ void Salarios::on_actionAcerca_de_triggered()
     qDebug() << dialog->valor();
 }
 
+
 void Salarios::on_actionAbrir_triggered()
 {
     QString texto="";
-    QFile file(QFileDialog::getOpenFileName(this,"Abrir Archivo","","Archivo de Texto(*.txt)"));
+    QFile file(QFileDialog::getOpenFileName(this,tr("Abrir Archivo"),QDir::home().absolutePath(),tr("Archivo de Texto(*.txt)")));
 
            if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
-              QMessageBox::warning(this, "Salarios", "No se puede abrir el archivo");
+              QMessageBox::warning(this, tr("Salarios"), tr("No se puede abrir el archivo"));
            }else{
                QTextStream entrada(&file);
                while (!entrada.atEnd()) {
